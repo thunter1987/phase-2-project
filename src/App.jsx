@@ -2,7 +2,6 @@ import React from "react";
 import "./App.css";
 import Home from "./Home";
 import PokémonList from "./PokémonList";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import { useState } from "react";
 import Axios from "axios";
 
@@ -15,10 +14,11 @@ function App() {
     hp: "",
     attack: "",
     defense: "",
-    type: ""
+    type: "",
   });
 
-  const searchPokemon = () => {
+  const searchPokemon = (event) => {
+    event.preventDefault();
     Axios.get(`https://pokeapi.co/api/v2/pokemon/${pokemonName}`).then(
       (response) => {
         setPokemon({
@@ -28,7 +28,7 @@ function App() {
           hp: response.data.stats[0].base_stat,
           attack: response.data.stats[1].base_stat,
           defense: response.data.stats[2].base_stat,
-          type: response.data.stats[3].base_stat
+          type: response.data.stats[3].base_stat,
         });
       }
     );
@@ -37,29 +37,17 @@ function App() {
 
   return (
     <div className='App'>
-      <Router>
-        <div>
-          <nav>
-            <ul>
-              <li>
-                <Link to="/">Home</Link>
-              </li>
-              <li>
-                <Link to="/pokemon">Pokémon List</Link>
-              </li>
-            </ul>
-          </nav>
-        </div>
-      </Router>
       <Home />
       <PokémonList />
-      <div className="SearchBar">
-      <h1>Pokemon Info</h1>
-      <input
-        className="pokemon-search-input"
-        type='text'
-        onChange={(event) => setPokemonName(event.target.value)}/>
-      <button onClick={searchPokemon}>Search Pokemon</button>
+      <div className='SearchBar'>
+        <h1>Pokemon Info</h1>
+        <form onSubmit={searchPokemon}><input
+          className='pokemon-search-input'
+          type='text'
+          onChange={(event) => setPokemonName(event.target.value)}
+        />
+        <button value={pokemonName}>Search Pokemon</button>
+        </form>
       </div>
     </div>
   );

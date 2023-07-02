@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
 import axios from "axios";
 
 function PokémonList() {
@@ -12,12 +11,14 @@ function PokémonList() {
     };
     fetchData();
   }, []);
+  if(!pokémonData) {
+    return <p>Loading...</p>
+  }
   return (
     <div>
       <ul>
         {pokémonData.map((pokemon) => (
-          <li key={pokemon.name}>
-            <Link>{pokemon.name}</Link>
+            <li key={ pokemon.name }>{ pokemon.name }
           </li>
         ))}
       </ul>
