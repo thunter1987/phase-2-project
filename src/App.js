@@ -25,12 +25,14 @@ function App() {
   };
   return (
     <div className='App'>
+      <div className="SearchBar">
       <h1>Pokemon Info</h1>
       <input
         className="pokemon-search-input"
         type='text'
         onChange={(event) => setPokemonName(event.target.value)}/>
       <button onClick={searchPokemon}>Search Pokemon</button>
+      </div>
     </div>
   );
 }
