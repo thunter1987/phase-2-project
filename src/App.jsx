@@ -17,9 +17,9 @@ function App() {
     type: "",
   });
 
-  const searchPokemon = (event) => {
+  const searchPokemon = async (event) => {
     event.preventDefault();
-    Axios.get(`https://pokeapi.co/api/v2/pokemon/${pokemonName}`).then(
+    await Axios.get(`https://pokeapi.co/api/v2/pokemon/${pokemonName}`).then(
       (response) => {
         setPokemon({
           name: pokemonName,
@@ -30,9 +30,7 @@ function App() {
           defense: response.data.stats[2].base_stat,
           type: response.data.stats[3].base_stat,
         });
-      }
-    );
-    console.log(pokemon);
+      });
   };
 
   return (
@@ -48,6 +46,7 @@ function App() {
         />
         <button value={pokemonName}>Search Pokemon</button>
         </form>
+        <p>{ pokemon.name, pokemon.img }</p>
       </div>
     </div>
   );
