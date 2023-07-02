@@ -1,4 +1,5 @@
 import React from "react";
+import { LinkHTMLAttributes } from "react";
 import "./App.css";
 import Home from "./Home";
 import PokémonList from "./PokémonList";
