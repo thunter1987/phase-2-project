@@ -1,8 +1,8 @@
 import React from "react";
-import { LinkHTMLAttributes } from "react";
 import "./App.css";
 import Home from "./Home";
 import PokémonList from "./PokémonList";
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import { useState } from "react";
 import Axios from "axios";
 
@@ -37,6 +37,20 @@ function App() {
 
   return (
     <div className='App'>
+      <Router>
+        <div>
+          <nav>
+            <ul>
+              <li>
+                <Link to="/">Home</Link>
+              </li>
+              <li>
+                <Link to="/pokemon">Pokémon List</Link>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </Router>
       <Home />
       <PokémonList />
       <div className="SearchBar">
