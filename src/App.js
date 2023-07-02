@@ -1,4 +1,6 @@
+import React from "react";
 import "./App.css";
+import Home from "./Home";
 import { useState } from "react";
 import Axios from "axios";
 
@@ -30,8 +32,10 @@ function App() {
     );
     console.log(pokemon);
   };
+
   return (
     <div className='App'>
+      <Home />
       <div className="SearchBar">
       <h1>Pokemon Info</h1>
       <input
