@@ -50,7 +50,7 @@ function App() {
           value={pokemonName}
           onChange={handleSearchChange}
         />
-        <button value={pokemonName}>Search Pokemon</button>
+        <button type="Submit" value={pokemonName}>Search Pokemon</button>
         </form>
       </div>
     </div>
