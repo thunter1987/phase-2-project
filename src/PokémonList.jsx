@@ -22,7 +22,7 @@ function PokémonList({ pokemon }) {
         setLoading(false);
         setNextPageUrl(response.data.next);
         setPrevPageUrl(response.data.previous);
-        setPokémonData(response.data.results.map(pokemon => pokemon.name));
+        setPokémonData(response.data.results.map(pokemon => <p key={ pokemon }>pokemon.name</p>));
       });
 
     return () => cancel();
@@ -43,7 +43,7 @@ function PokémonList({ pokemon }) {
         gotoPrevPage={ prevPageUrl ? gotoPrevPage : null }
       />
       <ul>
-        <li>{pokémonData}</li>
+        {pokémonData}
       </ul>
     </div>
   );

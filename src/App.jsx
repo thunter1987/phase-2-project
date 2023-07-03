@@ -42,7 +42,6 @@ function App() {
   return (
     <div className='App'>
       <Home />
-      <NavLink>
         <PokémonList pokemon={ pokemon }
        className='SearchBar'>
         <h1>Pokemon Info</h1>
@@ -55,7 +54,6 @@ function App() {
         <button type="Submit" value={pokemonName}>Search Pokemon</button>
           </form>
           </PokémonList>
-        </NavLink>
     </div>
   );
 }
