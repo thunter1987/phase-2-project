@@ -41,7 +41,7 @@ function App() {
   return (
     <div className='App'>
       <Home />
-      <PokémonList />
+      <PokémonList pokemon={pokemon}/>
       <div className='SearchBar'>
         <h1>Pokemon Info</h1>
         <form onSubmit={searchPokemon}><input
