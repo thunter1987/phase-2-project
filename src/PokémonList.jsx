@@ -43,9 +43,7 @@ function PokémonList({ pokemon }) {
         gotoPrevPage={ prevPageUrl ? gotoPrevPage : null }
       />
       <ul>
-        {pokemon.map((pokemon) => (
-          <li key={pokemon.name}>{pokemon.name}</li>
-        ))}
+        <li>{pokémonData}</li>
       </ul>
     </div>
   );

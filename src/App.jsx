@@ -4,6 +4,7 @@ import Home from "./Home";
 import PokémonList from "./PokémonList";
 import { useState } from "react";
 import Axios from "axios";
+import { NavLink } from "react-router-dom";
 
 function App() {
   const [pokemonName, setPokemonName] = useState('');
@@ -41,6 +42,7 @@ function App() {
   return (
     <div className='App'>
       <Home />
+      <NavLink>
       <PokémonList pokemon={pokemon}/>
       <div className='SearchBar'>
         <h1>Pokemon Info</h1>
@@ -52,7 +54,8 @@ function App() {
         />
         <button type="Submit" value={pokemonName}>Search Pokemon</button>
         </form>
-      </div>
+        </div>
+        </NavLink>
     </div>
   );
 }
