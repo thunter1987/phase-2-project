@@ -12,19 +12,27 @@ function PokémonList({ pokemon }) {
 
   useEffect(() => {
     setLoading(true);
-    let cancel
-    axios.get(currentPageUrl, {
-      cancelToken: new axios.CancelToken(c => cancel = c)
-    }).then((response) => {
-      setLoading(false);
-      setNextPageUrl(response.data.next);
-      setPrevPageUrl(response.data.previous);
-      setPokémonData(response.data.results.map((pokemon) => pokemon.name));
-    })
+    let cancel;
+    axios
+      .get(currentPageUrl, {
+        cancelToken: new axios.CancelToken((c) => (cancel = c)),
+      })
+      .then((response) => {
+        setLoading(false);
+        setNextPageUrl(response.data.next);
+        setPrevPageUrl(response.data.previous);
+        setPokémonData(response.data.results.map((pokemon) => pokemon.name));
+      });
 
-    return () => cancel()
-
+    return () => cancel();
   }, [currentPageUrl]);
+
+  function gotoNextPage() {
+    setCurrentPageUrl(nextPageUrl);
+  }
+  function gotoPrevPage() {
+    setCurrentPageUrl(prevPageUrl);
+  }
   if (loading) return "Loading...";
 
   return (
