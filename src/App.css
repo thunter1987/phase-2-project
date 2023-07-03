@@ -1,13 +1,3 @@
 .App {
   text-align: center;
 }
-
-div.SearchBar {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  justify-content: center;
-  font-size: 25px;
-  background-color:powderblue;
-  text-align: center;
-}
