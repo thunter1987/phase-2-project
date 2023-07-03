@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 
-function PokémonList() {
+function PokémonList({ pokemon }) {
   const [pokémonData, setPokémonData] = useState([]);
 
   useEffect(() => {
@@ -18,7 +18,7 @@ function PokémonList() {
     <div>
       <ul>
         {pokémonData.map((pokemon) => (
-            <li key={ pokemon.name }>{ pokemon.name }
+            <li key={ pokemon.name }>{pokemon.name}{pokemon.hp}
           </li>
         ))}
       </ul>

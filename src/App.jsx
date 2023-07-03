@@ -6,7 +6,7 @@ import { useState } from "react";
 import Axios from "axios";
 
 function App() {
-  const [pokemonName, setPokemonName] = useState("");
+  const [pokemonName, setPokemonName] = useState('');
   const [pokemon, setPokemon] = useState({
     name: "",
     species: "",
@@ -30,8 +30,13 @@ function App() {
           defense: response.data.stats[2].base_stat,
           type: response.data.stats[3].base_stat,
         });
+        return <p>{ pokemon }</p>
       });
   };
+
+  function handleSearchChange(event){
+    setPokemonName(event.target.value)
+  }
 
   return (
     <div className='App'>
@@ -42,11 +47,11 @@ function App() {
         <form onSubmit={searchPokemon}><input
           className='pokemon-search-input'
           type='text'
-          onChange={(event) => setPokemonName(event.target.value)}
+          value={pokemonName}
+          onChange={handleSearchChange}
         />
         <button value={pokemonName}>Search Pokemon</button>
         </form>
-        <p>{ pokemon.name, pokemon.img }</p>
       </div>
     </div>
   );
