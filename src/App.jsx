@@ -43,8 +43,8 @@ function App() {
     <div className='App'>
       <Home />
       <NavLink>
-      <PokémonList pokemon={pokemon}/>
-      <div className='SearchBar'>
+        <PokémonList pokemon={ pokemon }
+       className='SearchBar'>
         <h1>Pokemon Info</h1>
         <form onSubmit={searchPokemon}><input
           className='pokemon-search-input'
@@ -53,8 +53,8 @@ function App() {
           onChange={handleSearchChange}
         />
         <button type="Submit" value={pokemonName}>Search Pokemon</button>
-        </form>
-        </div>
+          </form>
+          </PokémonList>
         </NavLink>
     </div>
   );
