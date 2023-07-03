@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import Pagination from "./Pagination";
 
 function PokémonList({ pokemon }) {
   const [pokémonData, setPokémonData] = useState([]);
@@ -37,6 +38,7 @@ function PokémonList({ pokemon }) {
 
   return (
     <div>
+      <Pagination gotoNextPage={gotoNextPage} gotoPrevPage={gotoPrevPage} />
       <ul>
         {pokemon.map((pokemon) => (
           <li key={pokemon.name}>{pokemon.name}</li>
