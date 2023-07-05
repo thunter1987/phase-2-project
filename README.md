@@ -1,6 +1,12 @@
+
+## Link to Backend JSON Server:
+## [https://github.com/thunter1987/phase-2-project-backend-server](https://github.com/thunter1987/phase-2-project-backend-server)
+<br>
+
 ## Available Scripts
 
-This Project Uses JSON Server as the database for information.\
+This Project Uses JSON Server as the database for information.
+<br/>
 
 You MUST do this for the application to work correctly!!
 ### `json-server --watch db.json --port 3001`
