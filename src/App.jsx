@@ -10,7 +10,7 @@ function App() {
     <NavBar />
     <div className="container">
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route exact path="/" element={<Home />} />
         <Route path="/parts" element={ <PerformancePartsList /> } />
         <Route path="/partform" element={<PerformancePartForm />} />
       </Routes>
