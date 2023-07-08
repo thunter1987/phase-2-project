@@ -6,9 +6,7 @@ function PerformancePartsList() {
   useEffect(() => {
     fetch('http://localhost:3001/performanceParts')
       .then((response) => response.json())
-      .then((data) => {
-        setPerformanceParts(data);
-      })
+      .then(data => setPerformanceParts(data))
       .catch((error) => {
         console.error(error);
       });
