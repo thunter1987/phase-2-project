@@ -38,7 +38,7 @@ function PerformancePartForm() {
       headers: {
         "Content-Type": "application/json",
       },
-      body: formDataToSend
+      body: JSON.stringify(formData)
     })
       .then((response) => response.json())
       .then((data) => {
@@ -47,6 +47,13 @@ function PerformancePartForm() {
       .catch((error) => {
         console.error(error); // Handle any errors
       });
+    setFormData({
+      name: "",
+      description: "",
+      price: 0,
+      manufacturer: "",
+      image: null,
+    })
   };
 
   return (
