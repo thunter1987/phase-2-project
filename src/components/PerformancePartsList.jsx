@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from "react";
 import DeletePartFromList from "./DeletePartFromList";
+import url from '../constants'
 
 function PerformancePartsList() {
   const [performanceParts, setPerformanceParts] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:3001/performanceParts")
+    fetch(url)
       .then((response) => response.json())
       .then((data) => setPerformanceParts(data))
       .catch((error) => {
