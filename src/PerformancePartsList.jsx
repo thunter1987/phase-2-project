@@ -19,7 +19,7 @@ function PerformancePartsList() {
       {performanceParts.map((part) => (
         <div key={part.id}>
           <h3>{ part.name }</h3>
-          <DeletePartFromList id={part.id} />
+          <DeletePartFromList id={ part.id } />
           <p>{part.description}</p>
           <p>Manufacturer: {part.manufacturer}</p>
           <p>Price: ${ part.price }</p>

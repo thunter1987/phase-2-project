@@ -12,7 +12,7 @@ function DeletePartFromList(id) {
   };
   return (
     <>
-      <button onClick={() => handleDelete(id)}>Delete This Part</button>
+      <button onClick={() => handleDelete()}>Delete This Part</button>
     </>
   );
 }
