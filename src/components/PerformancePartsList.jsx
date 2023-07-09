@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import DeletePartFromList from "./DeletePartFromList";
-import url from '../constants'
-
+import url from "../constants";
 function PerformancePartsList() {
   const [performanceParts, setPerformanceParts] = useState([]);
 
