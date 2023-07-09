@@ -1,16 +1,24 @@
 import React from "react";
+import "../css/navbar.css";
 import { Link, useMatch, useResolvedPath } from "react-router-dom";
 
 export default function NavBar() {
   return (
     <nav className='nav'>
+      <ul><li>
       <Link to='/' className='site-title'>
         Performance Parts Manager
-      </Link>
-      <ul>
-        <CustomLink to='/parts'>Parts List</CustomLink>
-        <CustomLink to='/partform'>Parts Form</CustomLink>
-      </ul>
+        </Link>
+      </li>
+        </ul>
+        <ul>
+        <li>
+          <CustomLink to='/parts'>Parts List</CustomLink>
+        </li>
+        <li>
+          <CustomLink to='/partform'>Parts Form</CustomLink>
+          </li>
+          </ul>
     </nav>
   );
   function CustomLink({ to, children, ...props }) {

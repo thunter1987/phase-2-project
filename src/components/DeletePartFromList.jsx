@@ -1,7 +1,8 @@
 import React from "react";
+import PerformancePartsList from "./PerformancePartsList";
 
-function DeletePartFromList(id) {
-  const handleDelete = () => {
+function DeletePartFromList({ id }) {
+  const handleDelete = (id) => {
     fetch(`http://localhost:3001/performanceParts/${id}`, {
       method: "DELETE",
     })
@@ -9,10 +10,11 @@ function DeletePartFromList(id) {
       .catch((error) => {
         console.error(error); // Handle any errors
       });
+    return { PerformancePartsList };
   };
   return (
     <>
-      <button onClick={() => handleDelete()}>Delete This Part</button>
+      <button onClick={() => handleDelete(id)}>Delete This Part</button>
     </>
   );
 }

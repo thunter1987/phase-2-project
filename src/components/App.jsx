@@ -6,17 +6,18 @@ import PerformancePartForm from "./PerformancePartForm";
 import PerformancePartsList from "./PerformancePartsList";
 
 function App() {
-  return (<>
-    <NavBar />
-    <div className="container">
-      <Routes>
-        <Route exact path="/" element={<Home />} />
-        <Route path="/parts" element={ <PerformancePartsList /> } />
-        <Route path="/partform" element={<PerformancePartForm />} />
-      </Routes>
+  return (
+    <>
+      <NavBar />
+      <div className='container'>
+        <Routes>
+          <Route exact path='/' element={<Home />} />
+          <Route path='/parts' element={<PerformancePartsList />} />
+          <Route path='/partform' element={<PerformancePartForm />} />
+        </Routes>
       </div>
     </>
-    );
+  );
 }
 
 export default App;

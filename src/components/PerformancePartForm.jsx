@@ -26,12 +26,12 @@ function PerformancePartForm() {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    const formDataToSend = new FormData();
-    formDataToSend.append('name', formData.name);
-    formDataToSend.append('description', formData.description);
-    formDataToSend.append('price', formData.price);
-    formDataToSend.append('manufacturer', formData.manufacturer);
-    formDataToSend.append('image', formData.image);
+    // const formDataToSend = new FormData();
+    // formDataToSend.append('name', formData.name);
+    // formDataToSend.append('description', formData.description);
+    // formDataToSend.append('price', formData.price);
+    // formDataToSend.append('manufacturer', formData.manufacturer);
+    // formDataToSend.append('image', formData.image);
 
     fetch("http://localhost:3001/performanceParts", {
       method: "POST",
