@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import DeletePartFromList from './DeletePartFromList';
 
 function PerformancePartsList() {
   const [performanceParts, setPerformanceParts] = useState([]);
@@ -17,11 +18,12 @@ function PerformancePartsList() {
       <h1>Performance Parts</h1>
       {performanceParts.map((part) => (
         <div key={part.id}>
-          <h3>{part.name}</h3>
+          <h3>{ part.name }</h3>
+          <DeletePartFromList id={part.id} />
           <p>{part.description}</p>
           <p>Manufacturer: {part.manufacturer}</p>
           <p>Price: ${ part.price }</p>
-          <img src={part.image} alt='part_image'/>
+          <img src={ part.image } alt='part_image' />
           <hr />
         </div>
       ))}

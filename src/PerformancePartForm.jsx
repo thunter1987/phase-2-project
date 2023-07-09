@@ -41,9 +41,6 @@ function PerformancePartForm() {
       body: JSON.stringify(formData)
     })
       .then((response) => response.json())
-      .then((data) => {
-        console.log(data); // Handle the response data
-      })
       .catch((error) => {
         console.error(error); // Handle any errors
       });
