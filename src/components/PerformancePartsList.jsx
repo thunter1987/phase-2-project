@@ -21,7 +21,7 @@ function PerformancePartsList() {
           <DeletePartFromList
             id={part.id}
             onDeleteClick={(id) => {
-    const updatedPartsList = await fetch(`${url.parts}/${id}`,
+    const updatedPartsList = fetch(`${url.parts}/${id}`,
       { method: "DELETE" } )
      setPerformanceParts(updatedPartsList)
   };
