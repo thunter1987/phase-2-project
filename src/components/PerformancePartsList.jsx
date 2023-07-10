@@ -10,8 +10,9 @@ function PerformancePartsList() {
     const partsList = fetch(url.parts)
     .then((r) => r.json())
       setPerformanceParts(partsList)
+      }
       getPartsList()
-  }} ,[]);
+  } ,[]);
   
   return (
     <div>
