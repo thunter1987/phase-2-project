@@ -12,13 +12,6 @@ function PerformancePartsList() {
       getPartsList()
   }, []);
 
-  useEffect(async function handleDelete(id) {
-    const config = { method: "DELETE" };
-    const updatedPartsList = await fetch(`${url.parts}/${id}`, config)
-    .then(r => r.json())
-    setPerformanceParts(updatedPartsList)
-  },[]);
-
   return (
     <div>
       <h1>Performance Parts</h1>
@@ -27,7 +20,12 @@ function PerformancePartsList() {
           <h3>{part.name}</h3>
           <DeletePartFromList
             id={part.id}
-            onDeleteClick={(id) => handleDelete(id)}
+            onDeleteClick={(id) => { useEffect(async function handleDelete(id) {
+    const config = { method: "DELETE" };
+    const updatedPartsList = await fetch(`${url.parts}/${id}`, config)
+    .then(r => r.json())
+    setPerformanceParts(updatedPartsList)
+  },[]);}
           />
           <p>{part.description}</p>
           <p>Manufacturer: {part.manufacturer}</p>
