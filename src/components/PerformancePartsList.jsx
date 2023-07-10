@@ -6,12 +6,12 @@ function PerformancePartsList() {
   const [performanceParts, setPerformanceParts] = useState([]);
       
   useEffect(() => {
-    async function getPartsList() {
+    function getPartsList() {
     const partsList = await fetch(url.parts)
     .then((r) => r.json())
       setPerformanceParts(partsList)
       getPartsList()
-  }, []);
+  }} ,[]);
   
   return (
     <div>
