@@ -15,8 +15,8 @@ function PerformancePartsList() {
 
   const handleDelete = (id) => {
     const config = { method: "DELETE" };
-    fetch(`${url.parts}/${id}`, config).then((r) => r.json());
-    JSON.stringify(performanceParts);
+    fetch(`${url.parts}/${id}`, config)
+    .then(partsData => setPerformanceParts(partsData));
   };
 
   return (
