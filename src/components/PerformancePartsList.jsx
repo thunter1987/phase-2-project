@@ -9,7 +9,6 @@ function PerformancePartsList() {
     const partsList = await fetch(url.parts)
     .then((r) => r.json())
       setPerformanceParts(partsList)
-      }
       getPartsList()
   }, []);
 
