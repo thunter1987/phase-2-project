@@ -20,13 +20,13 @@ function PerformancePartsList() {
           <h3>{part.name}</h3>
           <DeletePartFromList
             id={part.id}
-            onDeleteClick={(id) => { useEffect(async function handleDelete(id) {
+            onDeleteClick={(id) => { 
+              async function handleDelete(id) {
     const config = { method: "DELETE" };
     const updatedPartsList = await fetch(`${url.parts}/${id}`, config)
     .then(r => r.json())
     setPerformanceParts(updatedPartsList)
-  },[]);
-  };}/>
+  }/>
           <p>{part.description}</p>
           <p>Manufacturer: {part.manufacturer}</p>
           <p>Price: ${part.price}</p>
