@@ -27,7 +27,6 @@ function PerformancePartsList() {
   const handleDelete = async (id) => {
     const updatedPartsList = await fetch(`${url.parts}/${id}`,
       { method: "DELETE" } )
-      return updatedPartsList.json()
   }
   
   useEffect(() => {
