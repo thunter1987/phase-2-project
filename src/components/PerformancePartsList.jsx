@@ -5,14 +5,24 @@ import { url } from "../constants";
 function PerformancePartsList() {
   const [performanceParts, setPerformanceParts] = useState([]);
       
+  const fetchData = async () => {
+    const response = await fetch(url.parts)
+    if (!response.ok) {
+      throw new Error('Data could not be fetched!')
+    } else {
+      return response.json()
+    }
+  }
+
   useEffect(() => {
-    async  function getPartsList() {
-     const partsList = () => await fetch(url.parts)
-    .then((r) => r.json())
-      setPerformanceParts(partsList)
-      }
-      getPartsList()
-  } ,[]);
+    fetchData()
+      .then((res) => {
+        setPerformanceParts(res)
+      })
+      .catch((e) => {
+        console.log(e.message)
+      })
+  }, [])
   
   return (
     <div>
