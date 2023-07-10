@@ -4,13 +4,13 @@ import { url } from "../constants";
 
 function PerformancePartsList() {
   const [performanceParts, setPerformanceParts] = useState([]);
-  
-const getPartsList = async () => {
-  const partsList = await fetch(url.parts)
-      .then((r) => r.json())
+      
+  useEffect(async function getPartsList () {
+    const partsList = await fetch(url.parts)
+    .then((r) => r.json())
       setPerformanceParts(partsList)
       }
-  useEffect(getPartsList, []);
+  }getPartsList, []);
 
   const handleDelete = (id) => {
     const config = { method: "DELETE" };
