@@ -8,14 +8,11 @@
 This Project Uses JSON Server as the database for information.
 <br/>
 
-You MUST do this for the application to work correctly!!
-### `json-server --watch db.json --port 3001`
-
-Allows JSON Server to run alongside React in development mode.\
-Open [http://localhost:3001](http://localhost:3001) to view the database file in your browser.
-
+Run in terminal 
 ### `npm start`
 
-Runs the app in the development mode.\
+this will run the app and start the server at the same time.
+Open [http://localhost:3001](http://localhost:3001) to view the database file in your browser.
+
 Open [http://localhost:3000](http://localhost:3000) to view the Application in your browser.
 
