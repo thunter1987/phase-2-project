@@ -24,7 +24,7 @@ function PerformancePartsList() {
     const updatedPartsList = fetch(`${url.parts}/${id}`,
       { method: "DELETE" } )
      setPerformanceParts(updatedPartsList)
-  }
+  }}
   />
           <p>{part.description}</p>
           <p>Manufacturer: {part.manufacturer}</p>
