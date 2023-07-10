@@ -3,7 +3,7 @@
 <br>
 
 ## Link to Deployed Backend JSON Server
-## [https://phase-2-project-backend-server.onrender.com](https://phase-2-project-backend-server.onrender.com)
+## [https://phase-2-project-backend-server.onrender.com/PerformanceParts](https://phase-2-project-backend-server.onrender.com/performanceParts)
 <br>
 
 ## Link to Backend JSON server
