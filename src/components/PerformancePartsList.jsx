@@ -9,9 +9,7 @@ function PerformancePartsList() {
     const response = await fetch(url.parts)
     if (!response.ok) {
       throw new Error('Data could not be fetched!')
-    } else {
-      return response.json()
-    }
+    };
   }
   
   useEffect(() => {
