@@ -38,7 +38,7 @@ function PerformancePartsList() {
       .catch((e) => {
         console.log(e.message)
       })
-  }, [])
+  })
   
   return (
     <div>
