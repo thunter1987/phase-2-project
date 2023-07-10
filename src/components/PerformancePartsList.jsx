@@ -13,14 +13,25 @@ function PerformancePartsList() {
       return response.json()
     }
   }
-  const handleDelete = async (id) => {
-    const updatedPartsList = await fetch(`${url.parts}/${id}`,
-      { method: "DELETE" } )
-     setPerformanceParts(updatedPartsList)
-  }
   
   useEffect(() => {
     fetchData()
+      .then((res) => {
+        setPerformanceParts(res)
+      })
+      .catch((e) => {
+        console.log(e.message)
+      })
+  }, [])
+  
+  const handleDelete = async (id) => {
+    const updatedPartsList = await fetch(`${url.parts}/${id}`,
+      { method: "DELETE" } )
+      return updatedPartsList.json()
+  }
+  
+  useEffect(() => {
+    handleDelete
       .then((res) => {
         setPerformanceParts(res)
       })
