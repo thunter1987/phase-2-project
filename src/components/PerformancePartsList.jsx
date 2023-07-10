@@ -17,7 +17,7 @@ function PerformancePartsList() {
     const updatedPartsList = await fetch(`${url.parts}/${id}`,
       { method: "DELETE" } )
      setPerformanceParts(updatedPartsList)
-  }}
+  }
   
   useEffect(() => {
     fetchData()
