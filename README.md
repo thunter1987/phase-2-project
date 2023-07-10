@@ -1,5 +1,12 @@
+## Link to Deployed Frontend:
+## [https://flatiron-phase-2-project-frontend.netlify.app/](https://flatiron-phase-2-project-frontend.netlify.app/)
+<br>
 
-## Link to Backend JSON Server:
+## Link to Deployed Backend JSON Server
+## [https://phase-2-project-backend-server.onrender.com](https://phase-2-project-backend-server.onrender.com)
+<br>
+
+## Link to Backend JSON server
 ## [https://github.com/thunter1987/phase-2-project-backend-server](https://github.com/thunter1987/phase-2-project-backend-server)
 <br>
 
