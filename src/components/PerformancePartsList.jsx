@@ -12,11 +12,13 @@ function PerformancePartsList() {
       getPartsList()
   }, []);
 
-  const handleDelete = (id) => {
+  useEffect(async function handleDelete(id) {
     const config = { method: "DELETE" };
-    fetch(`${url.parts}/${id}`, config)
-    .then(partsData => setPerformamceParts(partsData))
-  };
+    const updatedPartsList = await fetch(`${url.parts}/${id}`, config)
+    .then(r => r.json())
+    setPerformanceParts(updatedPartsList)
+    handleDelete()
+  },[]);
 
   return (
     <div>
