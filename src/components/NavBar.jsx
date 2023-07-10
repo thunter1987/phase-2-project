@@ -14,12 +14,8 @@ export default function NavBar() {
         </li>
       </ul>
       <ul>
-        <li>
           <CustomLink to='/parts'>Parts List</CustomLink>
-        </li>
-        <li>
           <CustomLink to='/partform'>Parts Form</CustomLink>
-        </li>
       </ul>
     </nav>
   );

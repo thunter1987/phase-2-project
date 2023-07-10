@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { url } from "../constants";
 
 function PerformancePartForm() {
   const [formData, setFormData] = useState({
@@ -26,14 +27,7 @@ function PerformancePartForm() {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    // const formDataToSend = new FormData();
-    // formDataToSend.append('name', formData.name);
-    // formDataToSend.append('description', formData.description);
-    // formDataToSend.append('price', formData.price);
-    // formDataToSend.append('manufacturer', formData.manufacturer);
-    // formDataToSend.append('image', formData.image);
-
-    fetch("http://localhost:3001/performanceParts", {
+    fetch(url.parts, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -44,6 +38,7 @@ function PerformancePartForm() {
       .catch((error) => {
         console.error(error); // Handle any errors
       });
+    //resets form to blank after submission
     setFormData({
       name: "",
       description: "",
