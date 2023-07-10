@@ -26,7 +26,7 @@ function PerformancePartsList() {
     .then(r => r.json())
     setPerformanceParts(updatedPartsList)
   },[]);
-  }/>
+  }; />
           <p>{part.description}</p>
           <p>Manufacturer: {part.manufacturer}</p>
           <p>Price: ${part.price}</p>
