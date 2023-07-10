@@ -5,12 +5,13 @@ import { url } from "../constants";
 function PerformancePartsList() {
   const [performanceParts, setPerformanceParts] = useState([]);
       
-  useEffect(async function getPartsList () {
+  useEffect(async function getPartsList() {
     const partsList = await fetch(url.parts)
     .then((r) => r.json())
       setPerformanceParts(partsList)
       }
-  }getPartsList, []);
+      getPartsList()
+  }, []);
 
   const handleDelete = (id) => {
     const config = { method: "DELETE" };
