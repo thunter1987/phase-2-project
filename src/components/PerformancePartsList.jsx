@@ -6,10 +6,7 @@ function PerformancePartsList() {
   const [performanceParts, setPerformanceParts] = useState([]);
       
   const fetchData = async () => {
-    const response = await fetch(url.parts)
-    if (!response.ok) {
-      throw new Error('Data could not be fetched!')
-    };
+    await fetch(url.parts)
   }
   
   useEffect(() => {
