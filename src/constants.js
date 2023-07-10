@@ -1,3 +1,3 @@
 export const url = {
-    parts: "http://localhost:3001/performanceParts"
+    parts: "https://phase-2-project-backend-server.onrender.com"
 }
