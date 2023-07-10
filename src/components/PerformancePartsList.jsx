@@ -20,11 +20,10 @@ function PerformancePartsList() {
           <h3>{part.name}</h3>
           <DeletePartFromList
             id={part.id}
-            onDeleteClick={(id) => { 
-              async function handleDelete(id) {
-    const config = { method: "DELETE" };
-    const updatedPartsList = await fetch(`${url.parts}/${id}`, config)
-    return setPerformanceParts(updatedPartsList)
+            onDeleteClick={(id) => {
+    const updatedPartsList = await fetch(`${url.parts}/${id}`,
+      { method: "DELETE" } )
+     setPerformanceParts(updatedPartsList)
   };
   />
           <p>{part.description}</p>
