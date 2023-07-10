@@ -17,7 +17,6 @@ function PerformancePartsList() {
     const updatedPartsList = await fetch(`${url.parts}/${id}`, config)
     .then(r => r.json())
     setPerformanceParts(updatedPartsList)
-    handleDelete()
   },[]);
 
   return (
