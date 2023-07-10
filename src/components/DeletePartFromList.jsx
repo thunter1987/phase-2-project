@@ -4,7 +4,7 @@ import React from "react";
 function DeletePartFromList({ onDeleteClick }) {
   return (
     <>
-      <button onClick={(id) => onDeleteClick(id)}>Delete This Part</button>
+      <button onClick={onDeleteClick}>Delete This Part</button>
     </>
   );
 }

@@ -4,46 +4,30 @@ import { url } from "../constants";
 
 function PerformancePartsList() {
   const [performanceParts, setPerformanceParts] = useState([]);
-      
-  const fetchData = async () => {
-    await fetch(url.parts)
-  }
-  
+
+  //renders list on Parts List Page
   useEffect(() => {
-    fetchData()
-      .then((res) => {
-        setPerformanceParts(res)
-      })
-      .catch((e) => {
-        console.log(e.message)
-      })
-  }, [])
-  
-  const handleDelete = async (id) => {
-     await fetch(`${url.parts}/${id}`,
-      { method: "DELETE" } )
-      performanceParts.filter(part => part.id !== id)
+    fetch(url.parts)
+      .then((response) => response.json())
+      .then((data) => setPerformanceParts(data));
+  }, []);
+
+  function handleDelete(id) {
+    //fetch using passed in param of "id" to choose a specific item to delete.
+    fetch(`${url.parts}/${id}`, { method: "DELETE" });
+    //filters parts list to update what is shown on the screen after delete method.
+    const filteredParts = performanceParts.filter((part) => part.id !== id);
+    //updates the state of list
+    setPerformanceParts(filteredParts);
   }
-  
-  useEffect(() => {
-    handleDelete()
-      .then((res) => {
-        setPerformanceParts(res)
-      })
-      .catch((e) => {
-        console.log(e.message)
-      })
-  })
-  
+
   return (
     <div>
       <h1>Performance Parts</h1>
-      {performanceParts.map(part => (
+      {performanceParts.map((part) => (
         <div key={part.id}>
           <h3>{part.name}</h3>
-          <DeletePartFromList
-            id={part.id}
-            onDeleteClick={handleDelete}/>
+          <DeletePartFromList onDeleteClick={() => handleDelete(part.id)} />
           <p>{part.description}</p>
           <p>Manufacturer: {part.manufacturer}</p>
           <p>Price: ${part.price}</p>
